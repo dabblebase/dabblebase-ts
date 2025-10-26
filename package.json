@@ -27,7 +27,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
+    "build": "npm run build:clean && npm run build:esm && npm run build:cjs && npm run build:copy",
+    "build:clean": "rm -rf dist",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json", 
+    "build:copy": "cp dist/esm/index.js dist/index.js && cp dist/cjs/index.js dist/index.cjs && cp dist/esm/index.d.ts dist/index.d.ts && cp -r dist/esm/internal dist/",
     "prepublishOnly": "npm run build",
     "test": "echo \"add tests later\" && exit 0"
   },
