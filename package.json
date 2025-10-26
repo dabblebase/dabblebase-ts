@@ -1,6 +1,6 @@
 {
   "name": "@dabblebase/dabblebase-ts",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "description": "TypeScript client for Dabblebase.",
   "license": "GPLv3",
   "repository": {

@@ -10,6 +10,35 @@ import {
   DabblebaseRealtimeClient,
 } from "./internal/realtime";
 
+// Export all types from internal modules for public use
+export type {
+  // Auth types
+  AuthSubject,
+  AuthVerificationResult,
+  AuthProvider,
+  DabblebaseAuthClient,
+  AuthClientConfiguration,
+} from "./internal/auth";
+
+export type {
+  // Storage types
+  DabblebaseStorageClient,
+  StorageClientConfiguration,
+} from "./internal/storage";
+
+export type {
+  // Realtime types
+  DatabaseChangeEvent,
+  PresenceUser,
+  PresenceState,
+  BroadcastMessage,
+  DbChangesSocketConnection,
+  BroadcastsSocketConnection,
+  PresenceSocketConnection,
+  DabblebaseRealtimeClient,
+  RealtimeClientConfiguration,
+} from "./internal/realtime";
+
 /** Configuration for the Dabblebase client */
 export type ClientConfiguration = {
   projectId: string;
