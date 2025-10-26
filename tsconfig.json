@@ -5,12 +5,13 @@
     "target": "ES2020",
     "declaration": true,
     "emitDeclarationOnly": false,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
     "strict": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "rootDir": "src",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": false
   },
   "include": ["src"]
 }

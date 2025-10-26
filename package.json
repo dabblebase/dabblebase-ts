@@ -1,6 +1,6 @@
 {
   "name": "@dabblebase/dabblebase-ts",
-  "version": "0.1.2-alpha",
+  "version": "0.1.3-alpha",
   "description": "TypeScript client for Dabblebase.",
   "license": "GPLv3",
   "repository": {
@@ -27,10 +27,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run build:clean && npm run build:esm && npm run build:cjs && npm run build:copy",
+    "build": "npm run build:clean && npm run build:esm && npm run build:cjs && npm run build:fix-imports && npm run build:copy",
     "build:clean": "rm -rf dist",
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig.cjs.json", 
+    "build:fix-imports": "find dist/esm -name '*.js' -exec sed -i 's|from \"\\./internal/\\([^\"]*\\)\"|from \"./internal/\\1.js\"|g' {} \\; && find dist/esm -name '*.js' -exec sed -i 's|from \"\\./\\([^/\"]*\\)\"|from \"./\\1.js\"|g' {} \\;",
     "build:copy": "cp dist/esm/index.js dist/index.js && cp dist/cjs/index.js dist/index.cjs && cp dist/esm/index.d.ts dist/index.d.ts && cp -r dist/esm/internal dist/",
     "prepublishOnly": "npm run build",
     "test": "echo \"add tests later\" && exit 0"
