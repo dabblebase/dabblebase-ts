@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  httpd:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace
+      - dabblebase-ts-node_modules:/workspace/node_modules
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - windir # Defined on Windows but not on other platforms
+volumes:
+  dabblebase-ts-node_modules:

@@ -1,0 +1,46 @@
+{
+  "name": "@dabblebase/dabblebase-ts",
+  "version": "0.1.0",
+  "description": "TypeScript client for Dabblebase.",
+  "license": "GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dabblebase/dabblebase-ts.git"
+  },
+  "homepage": "https://github.com/dabblebase/dabblebase-ts#readme",
+  "bugs": {
+    "url": "https://github.com/dabblebase/dabblebase-ts/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"add tests later\" && exit 0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/phoenix": "^1.6.6",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "phoenix": "^1.8.1"
+  }
+}
